@@ -2,6 +2,7 @@
 @import '103-sort_list';
 
 $default-order: a b c d e f g h i j k l m n o p q r s t u v w x y z !default;
+
 @function _str-compare($a, $b, $order) {
     $a: to-lower-case($a + unquote(""));
     $b: to-lower-case($b + unquote(""));
@@ -14,7 +15,7 @@ $default-order: a b c d e f g h i j k l m n o p q r s t u v w x y z !default;
             @return index($order, $char-a) < index($order, $char-b);
          }
     }
-    @return str-length($a) < str - length($b);
+    @return str-length($a) < str-length($b);
 }
 
 @function quick-sort($list, $order: $default-order) {
